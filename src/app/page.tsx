@@ -7,7 +7,7 @@ import Footer from "@/components/Footer";
 import { 
   MapPin, Clock, Monitor, Users, Activity, Brain, Heart,
   CheckCircle, ChevronDown, Calendar, Shield, Zap,
-  ArrowRight, Building, Stethoscope, Video
+  ArrowRight, Building, Stethoscope, Video, Home as HomeIcon, Car
 } from "lucide-react";
 
 const services = [
@@ -48,6 +48,24 @@ const services = [
     features: ["Comprehensive visit", "Lab work coordination", "Referrals if needed"],
     color: "slate"
   },
+  { 
+    name: "Home Care", 
+    price: 89, 
+    subtext: "In-Home Nursing", 
+    icon: HomeIcon,
+    description: "Skilled nursing at your home",
+    features: ["Post-surgery recovery", "Wound care & nursing", "Medication management"],
+    color: "cyan"
+  },
+  { 
+    name: "Care at Your Door", 
+    price: 109, 
+    subtext: "NP/PA Home Visit", 
+    icon: Car,
+    description: "Primary care comes to you",
+    features: ["Full exam at home", "Prescriptions & lab orders", "Diagnose & treat illness"],
+    color: "emerald"
+  },
 ];
 
 const stats = [
@@ -68,19 +86,23 @@ const faqs = [
   },
   {
     q: "What services are available?",
-    a: "We offer primary care (in-person & telehealth), physical therapy, occupational therapy, and mental health therapy. More specialties coming soon."
+    a: "We offer telehealth, primary care, PT/OT, mental health, home care (nursing), and Care at Your Door (NP/PA home visits). More specialties coming soon."
   },
   {
     q: "Where is ClearPath available?",
     a: "We currently serve Georgia and Colorado, with more states launching soon. Join our waitlist to be notified when we expand to your area."
   },
   {
-    q: "Can I see the same doctor again?",
+    q: "What's the difference between Home Care and Care at Your Door?",
+    a: "Home Care ($89) is skilled nursing — wound care, medication management, post-surgery support. Care at Your Door ($109) is a full primary care visit with an NP/PA who can diagnose, treat, and prescribe medications."
+  },
+  {
+    q: "Can I see the same provider again?",
     a: "Absolutely! You can book with the same provider for continuity of care, or try someone new — your choice."
   },
   {
     q: "Is this cheaper than my insurance copay?",
-    a: "Often, yes! Many insurance copays for specialists are $40-75, and PT with a deductible can cost $150-300 per visit. Our $69 flat rate is often less."
+    a: "Often, yes! Many insurance copays for specialists are $40-75, and PT with a deductible can cost $150-300 per visit. Our flat rates are often less."
   }
 ];
 
@@ -147,7 +169,7 @@ export default function Home() {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-5">
             {services.map((service) => (
               <div
                 key={service.name}
@@ -165,11 +187,15 @@ export default function Home() {
                 
                 <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-4 ${
                   service.color === "purple" ? "bg-purple-100" : 
-                  service.color === "slate" ? "bg-slate-100" : "bg-teal-100"
+                  service.color === "slate" ? "bg-slate-100" : 
+                  service.color === "cyan" ? "bg-cyan-100" : 
+                  service.color === "emerald" ? "bg-emerald-100" : "bg-teal-100"
                 }`}>
                   <service.icon className={`w-6 h-6 ${
                     service.color === "purple" ? "text-purple-600" : 
-                    service.color === "slate" ? "text-slate-600" : "text-teal-600"
+                    service.color === "slate" ? "text-slate-600" : 
+                    service.color === "cyan" ? "text-cyan-600" : 
+                    service.color === "emerald" ? "text-emerald-600" : "text-teal-600"
                   }`} />
                 </div>
                 
@@ -185,7 +211,9 @@ export default function Home() {
                   {service.features.map((feature, i) => (
                     <li key={i} className="flex items-center gap-2 text-sm text-slate-600">
                       <CheckCircle className={`w-4 h-4 flex-shrink-0 ${
-                        service.color === "purple" ? "text-purple-500" : "text-teal-500"
+                        service.color === "purple" ? "text-purple-500" : 
+                        service.color === "cyan" ? "text-cyan-500" : 
+                        service.color === "emerald" ? "text-emerald-500" : "text-teal-500"
                       }`} />
                       {feature}
                     </li>

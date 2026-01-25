@@ -7,7 +7,7 @@ import Footer from "@/components/Footer";
 import { 
   Users, Building, CheckCircle, ArrowRight, DollarSign,
   Clock, Heart, Shield, Zap, TrendingUp, Award, Phone,
-  Mail, ChevronDown, Star, Activity, Brain, Stethoscope
+  Mail, ChevronDown, Star, Activity, Brain, Stethoscope, Home, Car
 } from "lucide-react";
 
 const benefits = [
@@ -24,7 +24,7 @@ const benefits = [
   {
     icon: Heart,
     title: "Comprehensive Care",
-    desc: "Primary care, PT/OT, mental health, and telehealth — all included."
+    desc: "Primary care, PT/OT, mental health, home care, and Care at Your Door — all included."
   },
   {
     icon: Shield,
@@ -34,10 +34,12 @@ const benefits = [
 ];
 
 const services = [
-  { name: "Primary Care", price: "$79", icon: Stethoscope, desc: "In-person visits" },
   { name: "Telehealth", price: "$45", icon: Phone, desc: "Virtual primary care" },
   { name: "PT / OT", price: "$69", icon: Activity, desc: "Physical & Occupational Therapy" },
   { name: "Mental Health", price: "$69", icon: Brain, desc: "Therapy & counseling" },
+  { name: "Primary Care", price: "$79", icon: Stethoscope, desc: "In-person visits" },
+  { name: "Home Care", price: "$89", icon: Home, desc: "Skilled nursing visits" },
+  { name: "Care at Your Door", price: "$109", icon: Car, desc: "NP/PA home visits" },
 ];
 
 const stats = [

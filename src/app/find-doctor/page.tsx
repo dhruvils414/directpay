@@ -11,9 +11,13 @@ const doctors = [
   { id: 4, name: "Dr. James Williams", specialty: "Physical Therapy", location: "Denver, CO", price: 69, rating: 4.7, reviews: 87, available: true, initials: "JW" },
   { id: 5, name: "Dr. Lisa Thompson", specialty: "Mental Health", location: "Atlanta, GA", price: 69, rating: 4.9, reviews: 203, available: true, initials: "LT" },
   { id: 6, name: "Dr. Robert Kim", specialty: "Occupational Therapy", location: "Denver, CO", price: 69, rating: 4.6, reviews: 72, available: true, initials: "RK" },
+  { id: 7, name: "Nurse Angela Davis", specialty: "Home Care", location: "Atlanta, GA", price: 89, rating: 4.8, reviews: 67, available: true, initials: "AD" },
+  { id: 8, name: "Nurse Marcus Brown", specialty: "Home Care", location: "Denver, CO", price: 89, rating: 4.9, reviews: 45, available: true, initials: "MB" },
+  { id: 9, name: "Jessica Martinez, NP", specialty: "Care at Your Door", location: "Atlanta, GA", price: 109, rating: 4.9, reviews: 38, available: true, initials: "JM" },
+  { id: 10, name: "David Wilson, PA", specialty: "Care at Your Door", location: "Denver, CO", price: 109, rating: 4.7, reviews: 29, available: true, initials: "DW" },
 ];
 
-const specialties = ["All Specialties", "Primary Care", "Internal Medicine", "Family Medicine", "Physical Therapy", "Occupational Therapy", "Mental Health"];
+const specialties = ["All Specialties", "Primary Care", "Internal Medicine", "Family Medicine", "Physical Therapy", "Occupational Therapy", "Mental Health", "Home Care", "Care at Your Door"];
 const locations = ["All Locations", "Atlanta, GA", "Denver, CO"];
 
 export default function FindDoctor() {
